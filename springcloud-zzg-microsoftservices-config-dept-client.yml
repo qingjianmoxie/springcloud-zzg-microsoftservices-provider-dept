@@ -1,14 +1,10 @@
-﻿spring:
+spring:
    profiles:
       active:
-       - dev
+      - dev
 ---             #类似于分隔符
 server:
     port: 8001
-spring:
-   profiles: dev
-   application:
-      name: springcloud-zzg-microsoftservices-config-client
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
   type-aliases-package: com.zzg.springcloud.entities    # 所有Entity别名类所在包
@@ -16,6 +12,7 @@ mybatis:
   - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
     
 spring:
+   profiles: dev
    application:
     name: springcloud-zzg-microsoftservices-config-dept-client            #注意，这个名字很重要，是要注册到zk上的服务的名，这个名字就是你对外暴露的微服务的名，注意一个项目中统一用一个对外暴露的服务名称
    datasource:
@@ -47,10 +44,6 @@ info:
 ---             #类似于分隔符
 server:
     port: 8005
-spring:
-   profiles: test
-   application:
-      name: springcloud-zzg-microsoftservices-config-client
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
   type-aliases-package: com.zzg.springcloud.entities    # 所有Entity别名类所在包
@@ -58,6 +51,7 @@ mybatis:
   - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
     
 spring:
+   profiles: test
    application:
     name: springcloud-zzg-microsoftservices-config-dept-client            #注意，这个名字很重要，是要注册到zk上的服务的名，这个名字就是你对外暴露的微服务的名，注意一个项目中统一用一个对外暴露的服务名称
    datasource:
