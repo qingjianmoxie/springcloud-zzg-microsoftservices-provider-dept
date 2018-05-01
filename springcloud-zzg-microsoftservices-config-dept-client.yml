@@ -1,0 +1,88 @@
+spring:
+   profiles:
+      active:
+       - dev
+---             #类似于分隔符
+server:
+    port: 8001
+spring:
+   profiles: dev
+   application:
+      name: springcloud-zzg-microsoftservices-config-client
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
+  type-aliases-package: com.zzg.springcloud.entities    # 所有Entity别名类所在包
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
+    
+spring:
+   application:
+    name: springcloud-zzg-microsoftservices-config-dept-client            #注意，这个名字很重要，是要注册到zk上的服务的名，这个名字就是你对外暴露的微服务的名，注意一个项目中统一用一个对外暴露的服务名称
+   datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
+    url: jdbc:mysql://localhost:3306/test              # 数据库名称
+    username: root
+    password: ROOT
+    dbcp2:
+      min-idle: 5                                           # 数据库连接池的最小维持连接数
+      initial-size: 5                                       # 初始化连接数
+      max-total: 5                                          # 最大连接数
+      max-wait-millis: 200                                  # 等待连接获取的最大超时时间
+      
+eureka:
+  client: #客户端注册进eureka服务列表内
+    service-url: 
+      #defaultZone: http://localhost:7001/eureka
+       defaultZone: http://client-config-eureka7001.com:7001/eureka/    
+  instance:
+    instance-id: springcloud-zzg-microsoftservices-config-dept-client-7001
+    prefer-ip-address: true     #访问路径可以显示IP地址     
+ 
+info: 
+  app.name: springcloud-zzg-microsoftservices
+  company.name: www.zzg.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+---             #类似于分隔符
+server:
+    port: 8005
+spring:
+   profiles: test
+   application:
+      name: springcloud-zzg-microsoftservices-config-client
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
+  type-aliases-package: com.zzg.springcloud.entities    # 所有Entity别名类所在包
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
+    
+spring:
+   application:
+    name: springcloud-zzg-microsoftservices-config-dept-client            #注意，这个名字很重要，是要注册到zk上的服务的名，这个名字就是你对外暴露的微服务的名，注意一个项目中统一用一个对外暴露的服务名称
+   datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
+    url: jdbc:mysql://localhost:3306/test              # 数据库名称
+    username: root
+    password: ROOT
+    dbcp2:
+      min-idle: 5                                           # 数据库连接池的最小维持连接数
+      initial-size: 5                                       # 初始化连接数
+      max-total: 5                                          # 最大连接数
+      max-wait-millis: 200                                  # 等待连接获取的最大超时时间
+      
+eureka:
+  client: #客户端注册进eureka服务列表内
+    service-url: 
+      #defaultZone: http://localhost:7001/eureka
+       defaultZone: http://client-config-eureka7005.com:7005/eureka/    
+  instance:
+    instance-id: springcloud-zzg-microsoftservices-config-dept-client-7005
+    prefer-ip-address: true     #访问路径可以显示IP地址     
+ 
+info: 
+  app.name: springcloud-zzg-microsoftservices
+  company.name: www.zzg.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
