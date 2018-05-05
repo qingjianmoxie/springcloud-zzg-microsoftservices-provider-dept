@@ -1,16 +1,16 @@
-spring:
+ï»¿spring:
    profiles:
       active:
        - dev
----             #ÀàËÆÓÚ·Ö¸ô·û
+---             #ç±»ä¼¼äºåˆ†éš”ç¬¦
 server:
     port: 8001
 
 mybatis:
-  config-location: classpath:mybatis/mybatis.cfg.xml  #mybatisËùÔÚÂ·¾¶
-  type-aliases-package: com.zzg.springcloud.entities #entity±ğÃûÀà
+  config-location: classpath:mybatis/mybatis.cfg.xml  #mybatisæ‰€åœ¨è·¯å¾„
+  type-aliases-package: com.zzg.springcloud.entities #entityåˆ«åç±»
   mapper-locations:
-  - classpath:mybatis/mapper/**/*.xml #mapperÓ³ÉäÎÄ¼ş
+  - classpath:mybatis/mapper/**/*.xml #mapperæ˜ å°„æ–‡ä»¶
     
 spring:
    profiles: dev
@@ -29,12 +29,12 @@ spring:
       max-wait-millis: 200
       
 eureka:
-  client: #¿Í»§¶Ë×¢²á½øeureka·şÎñÁĞ±íÄÚ
+  client: #å®¢æˆ·ç«¯æ³¨å†Œè¿›eurekaæœåŠ¡åˆ—è¡¨å†…
     service-url: 
       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
   instance:
-    instance-id: springcloud-zzg-microservices-dept-provider   #×Ô¶¨ÒåhystrixÏà¹ØµÄ·şÎñÃû³ÆĞÅÏ¢
-    prefer-ip-address: true     #·ÃÎÊÂ·¾¶¿ÉÒÔÏÔÊ¾IPµØÖ·
+    instance-id: springcloud-zzg-microservices-dept-provider   #è‡ªå®šä¹‰hystrixç›¸å…³çš„æœåŠ¡åç§°ä¿¡æ¯
+    prefer-ip-address: true     #è®¿é—®è·¯å¾„å¯ä»¥æ˜¾ç¤ºIPåœ°å€
       
 info:
   app.name: springcloud-zzg-microservices-dept-provider
@@ -46,10 +46,10 @@ server:
     port: 8001
 
 mybatis:
-  config-location: classpath:mybatis/mybatis.cfg.xml  #mybatisËùÔÚÂ·¾¶
-  type-aliases-package: com.zzg.springcloud.entities #entity±ğÃûÀà
+  config-location: classpath:mybatis/mybatis.cfg.xml  #mybatisæ‰€åœ¨è·¯å¾„
+  type-aliases-package: com.zzg.springcloud.entities #entityåˆ«åç±»
   mapper-locations:
-  - classpath:mybatis/mapper/**/*.xml #mapperÓ³ÉäÎÄ¼ş
+  - classpath:mybatis/mapper/**/*.xml #mapperæ˜ å°„æ–‡ä»¶
     
 spring:
    profiles: test
@@ -68,12 +68,12 @@ spring:
       max-wait-millis: 200
       
 eureka:
-  client: #¿Í»§¶Ë×¢²á½øeureka·şÎñÁĞ±íÄÚ
+  client: #å®¢æˆ·ç«¯æ³¨å†Œè¿›eurekaæœåŠ¡åˆ—è¡¨å†…
     service-url: 
       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
   instance:
-    instance-id: springcloud-zzg-microservices-dept-provider   #×Ô¶¨ÒåhystrixÏà¹ØµÄ·şÎñÃû³ÆĞÅÏ¢
-    prefer-ip-address: true     #·ÃÎÊÂ·¾¶¿ÉÒÔÏÔÊ¾IPµØÖ·
+    instance-id: springcloud-zzg-microservices-dept-provider   #è‡ªå®šä¹‰hystrixç›¸å…³çš„æœåŠ¡åç§°ä¿¡æ¯
+    prefer-ip-address: true     #è®¿é—®è·¯å¾„å¯ä»¥æ˜¾ç¤ºIPåœ°å€
       
 info:
   app.name: springcloud-zzg-microservices-dept-provider
@@ -85,10 +85,10 @@ server:
     port: 8001
 
 mybatis:
-  config-location: classpath:mybatis/mybatis.cfg.xml  #mybatisËùÔÚÂ·¾¶
-  type-aliases-package: com.zzg.springcloud.entities #entity±ğÃûÀà
+  config-location: classpath:mybatis/mybatis.cfg.xml  #mybatisæ‰€åœ¨è·¯å¾„
+  type-aliases-package: com.zzg.springcloud.entities #entityåˆ«åç±»
   mapper-locations:
-  - classpath:mybatis/mapper/**/*.xml #mapperÓ³ÉäÎÄ¼ş
+  - classpath:mybatis/mapper/**/*.xml #mapperæ˜ å°„æ–‡ä»¶
     
 spring:
    profiles: prod
@@ -107,12 +107,12 @@ spring:
       max-wait-millis: 200
       
 eureka:
-  client: #¿Í»§¶Ë×¢²á½øeureka·şÎñÁĞ±íÄÚ
+  client: #å®¢æˆ·ç«¯æ³¨å†Œè¿›eurekaæœåŠ¡åˆ—è¡¨å†…
     service-url: 
       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
   instance:
-    instance-id: springcloud-zzg-microservices-dept-provider   #×Ô¶¨ÒåhystrixÏà¹ØµÄ·şÎñÃû³ÆĞÅÏ¢
-    prefer-ip-address: true     #·ÃÎÊÂ·¾¶¿ÉÒÔÏÔÊ¾IPµØÖ·
+    instance-id: springcloud-zzg-microservices-dept-provider   #è‡ªå®šä¹‰hystrixç›¸å…³çš„æœåŠ¡åç§°ä¿¡æ¯
+    prefer-ip-address: true     #è®¿é—®è·¯å¾„å¯ä»¥æ˜¾ç¤ºIPåœ°å€
       
 info:
   app.name: springcloud-zzg-microservices-dept-provider
